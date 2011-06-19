@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1002</width>
+    <height>576</height>
+   </rect>
+  </property>
+  <property name="focusPolicy">
+   <enum>Qt::NoFocus</enum>
+  </property>
+  <property name="windowTitle">
+   <string>dust|maker pro</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">     QWidget#mainCentralWidget {
+         background-color: #595959;
+     }
+
+     QTabWidget::pane { /* The tab widget frame */
+         border: 1px solid #797979;
+		 position: absolute;
+		 top: -1px;
+     }
+
+     QTabWidget::tab-bar {
+         left: 0px; /* move to the right by 5px */
+     }
+
+     /* Style the tab using the tab sub-control. Note that
+         it reads QTabBar _not_ QTabWidget */
+     QTabBar::tab {
+         background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                     stop: 0 #595959, stop: 1.0 #494949);
+       /*  background-color: #595959; */
+         color: #a6a6a6;
+         border: 1px solid #404040;
+         border-bottom: 0px solid;
+         border-bottom-color: #0070c0; /* same as the pane color */
+         border-top-left-radius: 3px;
+         border-top-right-radius: 3px;
+         min-width: 4ex;
+         padding-left: 12px;
+         padding-right: 12px;
+         padding-top: 1px;
+         padding-bottom: 0px;
+         margin-left: -1px;
+         margin-right: -1px;
+		 font-size: 8pt;
+     }
+
+     QTabBar::tab:selected, QTabBar::tab:hover {
+         background-color: #696969;
+        /* background: qlineargradient(x1: 0, y1: 0, x2: 0, y2: 1,
+                                     stop: 0 #fafafa, stop: 0.4 #f4f4f4,
+                                     stop: 0.5 #e7e7e7, stop: 1.0 #fafafa);*/
+     }
+
+     QTabBar::tab:selected {
+         border-color: #797979;
+         border-bottom-color: #C2C7CB; /* same as pane color */
+         color: #ffffff;
+     }
+
+     QTabBar::tab:!selected {
+         margin-top: 2px; /* make non-selected tabs look smaller */
+		 border-bottom: 1px solid #797979;
+     }
+
+     /* make use of negative margins for overlapping tabs */
+     QTabBar::tab:selected {
+         /* expand/overlap to the left and right by 4px */
+         margin-left: -4px;
+         margin-right: -4px;
+     }
+
+     QTabBar::tab:first {
+         border-left: 2px solid #404040;
+     }
+
+     QTabBar::tab:first:selected {
+         margin-left: 0; /* the first selected tab has nothing to overlap with on the left */
+		 border-left: 1px solid #797979;
+     }
+
+     QTabBar::tab:last:selected {
+         margin-right: 0; /* the last selected tab has nothing to overlap with on the right */
+         border-right: 1px solid #797979;
+     }
+
+     QTabBar::tab:last {
+         border-right: 2px solid #404040;
+     }
+
+     QTabBar::tab:only-one {
+         margin: 0; /* if there is only one tab, we don't want overlapping margins */
+     }
+
+/**** MAIN TABS STYLING ****/
+
+     QTabWidget#mainTabsWidget::pane { /* The tab widget frame */
+         border-top: 1px solid #d925ff;
+		 position: absolute;
+		 top: -1px;
+     }
+
+     QWidget#mainTabsWidget &gt; QTabBar::tab:!selected {
+         margin-top: 2px; /* make non-selected tabs look smaller */
+		 border-bottom: 1px solid #d925ff;
+     }
+
+     QWidget#mainTabsWidget &gt; QTabBar::tab:selected {
+         border-color: #d925ff;
+         border-bottom-color: #C2C7CB; /* same as pane color */
+         color: #ffffff;
+     }
+
+     QWidget#productionTab, QWidget#visionTab, QWidget#soundTab, QWidget#vtTab, QWidget#replayTab, QWidget#feedsTab, QWidget#commsTab, QWidget#broadcastTab, QWidget#recordingTab, QWidget#settingsTab, QWidget#customTab {
+         background-color: #696969;
+     }
+
+/**** DOCK WIDGETS ****/
+
+ QDockWidget {
+     border: 1px solid #404040;
+ }
+
+ QDockWidget::title {
+     text-align: left; /* align the text to the left */
+     background: #696969;
+     padding-left: 5px;
+ }</string>
+  </property>
+  <widget class="QWidget" name="mainCentralWidget">
+   <property name="styleSheet">
+    <string notr="true"/>
+   </property>
+   <layout class="QVBoxLayout" name="verticalLayout_3">
+    <property name="margin">
+     <number>0</number>
+    </property>
+    <item>
+     <layout class="QVBoxLayout" name="mainVerticalLayout">
+      <property name="spacing">
+       <number>6</number>
+      </property>
+      <item>
+       <widget class="QTabWidget" name="mainTabsWidget">
+        <property name="enabled">
+         <bool>true</bool>
+        </property>
+        <property name="focusPolicy">
+         <enum>Qt::NoFocus</enum>
+        </property>
+        <property name="styleSheet">
+         <string notr="true"/>
+        </property>
+        <property name="currentIndex">
+         <number>0</number>
+        </property>
+        <property name="tabsClosable">
+         <bool>false</bool>
+        </property>
+        <property name="movable">
+         <bool>true</bool>
+        </property>
+        <widget class="QWidget" name="productionTab">
+         <attribute name="title">
+          <string>Production</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="visionTab">
+         <attribute name="title">
+          <string>Vision</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="soundTab">
+         <attribute name="title">
+          <string>Sound</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="vtTab">
+         <attribute name="title">
+          <string>VT</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="replayTab">
+         <attribute name="title">
+          <string>Replay</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="feedsTab">
+         <attribute name="title">
+          <string>Feeds</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="commsTab">
+         <attribute name="title">
+          <string>Comms</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="broadcastTab">
+         <attribute name="title">
+          <string>Broadcast</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="recordingTab">
+         <attribute name="title">
+          <string>Recording</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="settingsTab">
+         <attribute name="title">
+          <string>Settings</string>
+         </attribute>
+        </widget>
+        <widget class="QWidget" name="customTab">
+         <attribute name="title">
+          <string>Custom...</string>
+         </attribute>
+        </widget>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
